@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from .routers import todos
 
 app = FastAPI(title="Todo Tag Manager API")
 
@@ -11,6 +12,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# ルーターを登録（Laravelのweb.phpに相当）
+app.include_router(todos.router)
 
 @app.get("/")
 async def root():
