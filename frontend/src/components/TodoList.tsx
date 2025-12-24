@@ -1,13 +1,13 @@
 // frontend/src/components/TodoList.tsx
 // @ts-nocheck
 import React, { useState, useEffect } from 'react';
-import { apiService, Todo, Tag } from '../services/api';
+import { apiService, Todo, Tag } from '@/services/api';
 
 interface TodoListProps {
   onTodoUpdate?: () => void;
 }
 
-const TodoList: React.FC<TodoListProps> = ({ onTodoUpdate }) => {
+export default function TodoList({ onTodoUpdate }: TodoListProps) {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -182,5 +182,3 @@ const TodoList: React.FC<TodoListProps> = ({ onTodoUpdate }) => {
     </div>
   );
 };
-
-export default TodoList;

@@ -105,13 +105,13 @@ todo-tag-manager/
 ```bash
 DATABASE_URL=mysql://todo_user:todo_password@mysql:3306/todo_manager
 SECRET_KEY=your-secret-key-here-change-in-production
+REACT_APP_API_URL=http://localhost:8000
 DEBUG=True
-CORS_ORIGINS=http://localhost:3000
 ```
 
 #### フロントエンド (.env)
 ```bash
-REACT_APP_API_URL=http://localhost:8000
+CORS_ORIGINS=http://localhost:3000
 REACT_APP_ENV=development
 ```
 

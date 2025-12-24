@@ -1,17 +1,16 @@
-// Type definitions for Todo Tag Manager
-export interface Todo {
-  id: number;
-  title: string;
-  description?: string;
-  completed: boolean;
-  tags: string[];
-  createdAt: string;
-  updatedAt: string;
+// 型定義の集約ファイル
+export * from './Todo';
+export * from './Tag';
+
+// 共通の型定義
+export interface ApiResponse<T> {
+  data: T;
+  message?: string;
+  success: boolean;
 }
 
-export interface Tag {
-  id: number;
-  name: string;
-  color?: string;
-  createdAt: string;
+export interface PaginationParams {
+  page?: number;
+  limit?: number;
+  search?: string;
 }
